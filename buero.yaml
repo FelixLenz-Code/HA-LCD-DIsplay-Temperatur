@@ -1,0 +1,63 @@
+esphome:
+    name: buero
+    platform: ESP8266
+    board: d1_mini
+  
+  # Enable logging
+  logger:
+  
+  # Enable Home Assistant API
+  api:
+    password: "" # Passwort einsetzen
+  ota:
+    password: "" # Passwort einsetzen
+  
+  wifi:
+    ssid: "" #W lan SSID eintragen
+    password: "" # Wlan Passwort eingeben
+  
+    # Enable fallback hotspot (captive portal) in case wifi connection fails
+    ap:
+      ssid: "Buero Fallback Hotspot"
+      password: "" # Passwort eingeben
+  
+  captive_portal:
+  
+        
+  sensor:
+    - platform: homeassistant
+      id: tempdraussen
+      entity_id: # Draußen Temperatur entity id eingeben
+      internal: true
+      
+      
+    - platform: homeassistant
+      id: tempdrinnen
+      entity_id: sensor.buro_temperatur # muss eventuell geändert werden falls anderer Sensor benutzt wird oder die entity durch HA geändert wurde
+      internal: true  
+  
+    - platform: dht # DHT11 Sensor der hinten am Display dran ist
+      pin: D6
+      temperature:
+        name: "Buro Temperatur"
+      humidity:
+        name: "Buro Feuchtigkeit"
+      update_interval: 60s
+      model: DHT11    
+  
+ # alle Einstellungen für Display mit I2C als Bus     
+  i2c: # Es gibt 4 Kabel bei I2C (+5V, GND, SDA, SCL)
+    sda: D2
+    scl: D1
+  
+  display:
+    - platform: lcd_pcf8574
+      dimensions: 16x2
+      address: 0x27        # kann vom I2C Gerät abhängen und bei euch anders sein
+      lambda: |-
+        it.printf("Draussen: %.1f", id(tempdraussen).state);
+        it.printf(0, 1, "Drinnen: %.1f", id(tempdrinnen).state);
+        it.print(14, 0, "C");
+        it.print(13, 1, "C");
+      
+  
