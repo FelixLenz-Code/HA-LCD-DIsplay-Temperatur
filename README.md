@@ -17,7 +17,7 @@ Mein Ziel war es auf einem LCD Display Außen- und Innentemperatur anzeigen zu l
 
 Dann noch den DHT 11 anschließen. Der Datenport geht bei mir auf den Pin D6 des Wemos D1 mini.
 ![LCD Bild 1](https://github.com/FelixLenz-Code/HA-LCD-DIsplay-Temperatur/blob/main/Bilder/Snapshot_76.png?raw=true)
-
+Dann nur noch alles an den Halter anbringen. Ich habe mir diesen ausgedruckt. https://www.thingiverse.com/thing:4725030 Danke an den Ersteller dieses coolen Halters!
 ### Software
 In diesem Projekt findet ihr die Yaml Datei um sie auf den Wemos D1 mini zu laden. Ihr müsst nur noch einige Sachen ausfüllen. Es steht alles in der Datei drin was geändert werden muss.
 
