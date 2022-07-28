@@ -22,4 +22,4 @@ Dann nur noch alles an den Halter anbringen. Ich habe mir diesen ausgedruckt. ht
 In diesem Projekt findet ihr die Yaml Datei um sie auf den Wemos D1 mini zu laden. Ihr müsst nur noch einige Sachen ausfüllen. Es steht alles in der Datei drin was geändert werden muss.
 
 ## Fazit
-Ich hoffe ihr habt Spaß beim Nachbauen! Wenn ihr noch fragen habt schreibt mit gerne. Youtube Video folgt noch!
+Ich hoffe ihr habt Spaß beim Nachbauen! Wenn ihr noch fragen habt schreibt mit gerne. Youtube Video dazu: https://youtu.be/YzVEAGddLZY
